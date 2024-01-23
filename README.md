@@ -14,7 +14,7 @@ Apple's top implementation.
 ### Requirements
 
 - [Xcode 8.3.3](https://developer.apple.com/xcode/downloads/)
-- macOS 10.9+
+- macOS 10.10+
     - This is due to Swift
 
 ### Installation
@@ -34,6 +34,17 @@ To integrate SystemKit into your Xcode project using Carhage, specify it in your
 
 Run `carthage update` to build the framework and drag the built SystemKit.framework into your Xcode project.
 Don't forget to alter your Carthage [building phase for macOS](https://github.com/Carthage/Carthage#if-youre-building-for-os-x).
+
+# Swift Package Manager
+[Swift Package Manager (SPM)](https://www.swift.org/documentation/package-manager/) is a new package manager for swift that integrates directly into the language and tooling like XCode. Swift Package Manager is already installed with Swift so there is no need to download an external tools.
+
+To integrate SystemKit int your Xcode project using SPM, add the following to your Swift.package
+
+```
+  .package(url: "https://github.com/beltex/SystemKit", branch: "master")
+```
+
+Or you can just add [https://github.com/beltex/SystemKit](https://github.com/beltex/SystemKit) to your project using the Xcode Package Dependencies Page.
 
 ### Example
 
