@@ -25,6 +25,7 @@
 // THE SOFTWARE.
 
 import SystemKit
+import IOKit
 
 print("// MACHINE STATUS")
 
@@ -46,7 +47,7 @@ print("\tPHYSICAL SIZE:   \(System.physicalMemory())GB")
 let memoryUsage = System.memoryUsage()
 func memoryUnit(_ value: Double) -> String {
     if value < 1.0 { return String(Int(value * 1000.0))    + "MB" }
-    else           { return NSString(format:"%.2f", value) as String + "GB" }
+    else           { return String(format:"%.2f", value) as String + "GB" }
 }
 
 print("\tFREE:            \(memoryUnit(memoryUsage.free))")
@@ -74,7 +75,7 @@ let counts = System.processCounts()
 print("\tPROCESSES:       \(counts.processCount)")
 print("\tTHREADS:         \(counts.threadCount)")
 
-let loadAverage = System.loadAverage().map { NSString(format:"%.2f", $0) }
+let loadAverage = System.loadAverage().map { String(format:"%.2f", $0) }
 print("\tLOAD AVERAGE:    \(loadAverage)")
 print("\tMACH FACTOR:     \(System.machFactor())")
 

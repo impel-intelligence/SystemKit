@@ -188,7 +188,7 @@ public struct System {
         else           { name = String() }
 
 
-        ptr.deallocate(capacity: 1)
+        ptr.deallocate()
 
         #if DEBUG
             if result != 0 {
@@ -453,15 +453,12 @@ public struct System {
                 // TODO: Force unwrapping here should be safe, as
                 //       IOPMCopyCPUPowerStatus() defines the keys, but the
                 //       the cast (from AnyObject) could be problematic
-                processorSpeed = dataMap[kIOPMCPUPowerLimitProcessorSpeedKey]!
-                                                                      as! Double
-                processorCount = dataMap[kIOPMCPUPowerLimitProcessorCountKey]!
-                                                                      as! Int
-                schedulerTime  = dataMap[kIOPMCPUPowerLimitSchedulerTimeKey]!
-                                                                      as! Double
+                processorSpeed = dataMap[kIOPMCPUPowerLimitProcessorSpeedKey]! as! Double
+                processorCount = dataMap[kIOPMCPUPowerLimitProcessorCountKey]! as! Int
+                schedulerTime  = dataMap[kIOPMCPUPowerLimitSchedulerTimeKey]! as! Double
         }
 
-        status.deallocate(capacity: 1)
+        status.deallocate()
 
         return (processorSpeed, processorCount, schedulerTime)
     }
@@ -523,7 +520,7 @@ public struct System {
         }
   
         let data = hostInfo.move()
-        hostInfo.deallocate(capacity: 1)
+        hostInfo.deallocate()
         
         #if DEBUG
             if result != KERN_SUCCESS {
@@ -547,7 +544,7 @@ public struct System {
         }
         
         let data = hostInfo.move()
-        hostInfo.deallocate(capacity: 1)
+        hostInfo.deallocate()
         
         #if DEBUG
             if result != KERN_SUCCESS {
@@ -571,7 +568,7 @@ public struct System {
         }
         
         let data = hostInfo.move()
-        hostInfo.deallocate(capacity: 1)
+        hostInfo.deallocate()
         
         #if DEBUG
             if result != KERN_SUCCESS {
@@ -624,7 +621,7 @@ public struct System {
         mach_port_deallocate(mach_task_self_, pset)
 
         let data = info_out.move()
-        info_out.deallocate(capacity: 1)
+        info_out.deallocate()
         
         return data
     }
@@ -649,7 +646,7 @@ public struct System {
         }
 
         let data = hostInfo.move()
-        hostInfo.deallocate(capacity: 1)
+        hostInfo.deallocate()
         
         #if DEBUG
             if result != KERN_SUCCESS {
