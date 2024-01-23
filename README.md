@@ -41,10 +41,10 @@ Don't forget to alter your Carthage [building phase for macOS](https://github.co
 To integrate SystemKit int your Xcode project using SPM, add the following to your Swift.package
 
 ```
-  .package(url: "https://github.com/beltex/SystemKit", branch: "master")
+  .package(url: "https://github.com/impel-intelligence/SystemKit/", branch: "master")
 ```
 
-Or you can just add [https://github.com/beltex/SystemKit](https://github.com/beltex/SystemKit) to your project using the Xcode Package Dependencies Page.
+Or you can just add[ [https://github.com/impel-intelligence/SystemKit/](https://github.com/impel-intelligence/SystemKit/) to your project using the Xcode Package Dependencies Page.
 
 ### Example
 
